@@ -9,7 +9,7 @@ RUN apt-get update \
     && rm -rf /var/lib/apt/lists/*
 
 WORKDIR /etc/nginx/conf.d
-COPY *.conf ./
+COPY etc/nginx/conf.d/*.conf ./
 
 ENTRYPOINT ["/init"]
 CMD ["nginx", "-g", "daemon off;"]
